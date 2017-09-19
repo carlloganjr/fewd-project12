@@ -1,0 +1,60 @@
+@mixin flex($direction: null, $wrap: null, $justify: null,  $flexAlign: null) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $flexAlign;
+}
+
+@mixin flexAdds($grow) {
+  flex-grow: $grow;
+  @content;
+}
+
+@mixin box($wide: null, $marg: null, $pad: null, $tall: null) {
+  width: $wide;
+  margin: $marg;
+  padding: $pad;
+  height: $tall;
+}
+
+@mixin fonts($fSize: null, $fColor: null, $tAlign: null, $fWeight: null) {
+  font-size: $fSize;
+  color: $fColor;
+  text-align: $tAlign;
+  font-weight: $fWeight;
+}
+
+@mixin borders($border: null, $bRadius: null) {
+  border: $border;
+  border-radius: $bRadius;
+}
+
+@mixin media($size) {
+  @if $size == 'sm' {
+    @media #{$break-s} {
+      @content;
+    }
+  } @else if $size == 'med' {
+    @media #{$break-m} {
+      @content;
+    }
+  } @else if $size == 'lg' {
+    @media #{$break-l} {
+      @content;
+    }
+  } @else if $size == 'xl' {
+    @media #{$break-xl} {
+      @content;
+    }
+  }
+}
+
+@mixin position($pos: $n, $t: $n, $l: $n, $r: $n, $b: $n, $z: $n) {
+  position: $pos;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+  z-index: $z;
+}

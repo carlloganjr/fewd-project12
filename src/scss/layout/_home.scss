@@ -1,0 +1,23 @@
+#home {
+  @include position(fixed, 0, 0, $z: 1);
+  @include box(100vw, 0, 0, 100vh);
+  background: url('../img/city_scene.png') no-repeat bottom/1550px,
+  linear-gradient(to top, $gradient_light, $gradient_dark);
+}
+
+.title_div {
+  @include box(90%, 0 auto);
+  text-align: center;
+  h1 {
+    @extend %passion_font;
+    @include fonts(3.5rem, $text_mid, $n, 400);
+    @include box($n, 5.5rem 0 0 0, 0);
+    text-shadow: 0 0 18px rgba(0, 0, 0, 1),
+    0 0 18px rgba(0, 0, 0, .1);
+  }
+  h2 {
+    @extend %lalezar_font;
+    @include fonts(1.3rem, $text_mid, $n, 400);
+    @include box($n, 0, 0 0 1rem 0);
+  }
+}

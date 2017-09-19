@@ -1,0 +1,60 @@
+nav {
+  @include position(fixed, 0, 0, $z: -1);
+  @include box(100%, 0, 0, 100%);
+  // overflow: hidden;
+  ul {
+    @include flex(column);
+    list-style: none;
+    @include box(100%, auto, 5rem 0 0 0, 100%);
+    background: $nav_dark;
+    transform: translateX(100%);
+    transition: all .5s ease-in-out;
+  }
+}
+
+.nav_bg {
+  @include position(absolute, 0, $r: 0, $z: 998);
+  @include box(160px, 0, 0, 35px);
+  background: $nav_light;
+  transform: translateX(125%);
+  transition: all .4s ease-out;
+}
+
+.nav {
+  margin: 2rem 0 0 auto;
+  text-align: right;
+  @include position(relative);
+  a {
+    @include position(relative, $z: 999);
+    @extend %anchor_prop;
+    @extend %passion_font;
+    transition: all .4s ease-out;
+    &:hover {
+      color: $nav_dark;
+    }
+  }
+}
+
+.nav:hover .nav_bg {
+  transform: translateX(1rem);
+}
+
+#menu {
+  @include position(fixed, .8rem, $r: .8rem, $z: 1001);
+  @include box($n, 0, 0 1rem, 25px);
+  @include borders(solid 1px $bdr_light, 1rem);
+  color: $text_light;
+  cursor: pointer;
+  transition: background .4s ease;
+  p {
+    transform: translateY(-10px);
+    font-size: .9rem;
+    transition: all .4s ease;
+  }
+  &:hover {
+    background: $bdr_light;
+    p {
+      @include fonts($n, $text_dark, $n, bold);
+    }
+  }
+}

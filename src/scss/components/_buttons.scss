@@ -1,0 +1,12 @@
+.btn {
+  display: block;
+  @include box(175px);
+  @extend %btn;
+  .btn_link {
+    @include fonts(1.5rem, $text_light);
+  }
+}
+
+.btn_link_in {
+  @include fonts(1.5rem, $text_dark);
+}

@@ -1,0 +1,44 @@
+%passion_font {
+  font-family: 'Passion One', sans-serif;
+}
+
+%lalezar_font {
+  font-family: 'Lalezar', sans-serif;
+}
+
+%anchor_prop {
+  text-decoration: none;
+  @include fonts(2rem, $text_light);
+  padding: .7rem 1.5rem;
+}
+
+%btn {
+  border: solid 2px $bdr_light;
+  overflow: hidden;
+  position: relative;
+  @include box($n, 1rem auto, .5rem 0);
+  .btn_in {
+    @include position(absolute, 0, 0, 0, 0, -1);
+    background: $btn_light;
+    @include box($n, $n, .5rem 0);
+    transform: translateX(-100%);
+    transition: transform .5s ease;
+    .btn_link_in {
+      @extend %passion_font;
+      text-decoration: none;
+    }
+  }
+  .btn_link {
+    @extend %passion_font;
+    text-decoration: none;
+    padding: .7rem 1.5rem;
+    transition: all .5s ease;
+    white-space: nowrap;
+  }
+  &:hover .btn_in {
+    transform: translateX(0);
+  }
+  &:hover .btn_link {
+    padding-left: 150%;
+  }
+}
