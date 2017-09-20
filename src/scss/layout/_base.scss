@@ -8,13 +8,13 @@ body {
 }
 
 .wrapper {
-  @include box(100%, 0, 0, 100%);
+  @include box(100%, 0, 0);
   position: absolute;
 }
 
 .scroll {
   @include position(relative, $z: 2);
-  @include box(100%, 0, 0, 100%);
+  @include box(100%, 0, 0);
 }
 
 body::-webkit-scrollbar {
@@ -30,5 +30,6 @@ body::-webkit-scrollbar-thumb {
 
 #psuedo_home {
   @include position($z: -2);
+  padding-top: 100vh;
   background: transparent;
 }

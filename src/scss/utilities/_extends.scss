@@ -22,23 +22,19 @@
     background: $btn_light;
     @include box($n, $n, .5rem 0);
     transform: translateX(-100%);
-    transition: transform .5s ease;
-    .btn_link_in {
-      @extend %passion_font;
-      text-decoration: none;
-    }
+    transition: transform .4s ease;
   }
   .btn_link {
     @extend %passion_font;
     text-decoration: none;
-    padding: .7rem 1.5rem;
-    transition: all .5s ease;
+    @include position(absolute, 0, 0, 0, 0, 1);
+    transition: all .4s ease;
     white-space: nowrap;
   }
   &:hover .btn_in {
     transform: translateX(0);
   }
   &:hover .btn_link {
-    padding-left: 150%;
+    color: $text_dark;
   }
 }

@@ -1,3 +1,64 @@
 #portfolio {
   background: $folio_light;
+  h2 {
+    @extend %lalezar_font;
+    @include fonts(2.5rem, $text_dark, center);
+    @include box($n, 0, 1rem 0 .7rem 0);
+  }
+  ul {
+    @include flex(column);
+    @include box(100%, 0, 0);
+  }
+}
+
+.proj {
+  @include box(100%, 0, 0, 100vw);
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  &:hover .overlay {
+    background: rgba(0, 0, 85, .58);
+  }
+}
+
+.overlay {
+  @include position(absolute, 0, 0, 0, 0, 2);
+  background: $folio_dark;
+  transition: all .4s ease-in-out;
+  svg {
+    @include box(20%, 2.25rem 40% 0 40%, 0);
+    fill: $folio_light;
+  }
+  h3 {
+    @extend %lalezar_font;
+    @include fonts(2rem, $text_light, center);
+    @include box($n, .5rem 0, 0);
+  }
+  p {
+    @include fonts(1rem, $text_light, center);
+    @include box(80%, .5rem auto);
+  }
+}
+
+.dir {
+  background-image: url(../img/dir.png);
+}
+
+.video {
+  background-image: url(../img/video.png);
+}
+
+.dash {
+  background-image: url(../img/dash.png);
+}
+
+.form {
+  background-image: url(../img/form.png);
+  svg {
+    @include box(15%, 2.25rem 42.5% 0 42.5%, 0);
+  }
+}
+
+.gallery {
+  background-image: url(../img/gallery.png);
 }

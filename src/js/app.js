@@ -32,6 +32,6 @@ menu.addEventListener('click', function(e) {
     menu_p.innerHTML = 'MENU';
     setTimeout(function() {
       navigation.style.zIndex = '-1';
-    }, 1000);
+    }, 600);
   }
 });

@@ -1,7 +1,7 @@
-.btn .btn_in .btn_link_in, .btn .btn_link, .title_div h1, .nav a {
+.btn .btn_link, .title_div h1, .nav a {
   font-family: 'Passion One', sans-serif; }
 
-.title_div h2 {
+.title_div h2, #portfolio h2, .overlay h3 {
   font-family: 'Lalezar', sans-serif; }
 
 .nav a {
@@ -26,18 +26,21 @@
     background: #fff;
     padding: 0.5rem 0;
     transform: translateX(-100%);
-    transition: transform .5s ease; }
-    .btn .btn_in .btn_link_in {
-      text-decoration: none; }
+    transition: transform .4s ease; }
   .btn .btn_link {
     text-decoration: none;
-    padding: .7rem 1.5rem;
-    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all .4s ease;
     white-space: nowrap; }
   .btn:hover .btn_in {
     transform: translateX(0); }
   .btn:hover .btn_link {
-    padding-left: 150%; }
+    color: #005; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -457,7 +460,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
   position: absolute; }
 
 .scroll {
@@ -465,8 +467,7 @@ body {
   z-index: 2;
   width: 100%;
   margin: 0;
-  padding: 0;
-  height: 100%; }
+  padding: 0; }
 
 body::-webkit-scrollbar {
   width: 7px;
@@ -478,6 +479,7 @@ body::-webkit-scrollbar-thumb {
 
 #psuedo_home {
   z-index: -2;
+  padding-top: 100vh;
   background: transparent; }
 
 #home {
@@ -510,10 +512,80 @@ body::-webkit-scrollbar-thumb {
     padding: 0 0 1rem 0; }
 
 #portfolio {
-  background: #c688ef; }
+  background: #fff; }
+  #portfolio h2 {
+    font-size: 2.5rem;
+    color: #005;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0 0.7rem 0; }
+  #portfolio ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+.proj {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vw;
+  overflow: hidden;
+  background-size: cover;
+  position: relative; }
+  .proj:hover .overlay {
+    background: rgba(0, 0, 85, 0.58); }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 85, 0.7);
+  transition: all .4s ease-in-out; }
+  .overlay svg {
+    width: 20%;
+    margin: 2.25rem 40% 0 40%;
+    padding: 0;
+    fill: #fff; }
+  .overlay h3 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin: 0.5rem 0;
+    padding: 0; }
+  .overlay p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    margin: 0.5rem auto; }
+
+.dir {
+  background-image: url(../img/dir.png); }
+
+.video {
+  background-image: url(../img/video.png); }
+
+.dash {
+  background-image: url(../img/dash.png); }
+
+.form {
+  background-image: url(../img/form.png); }
+  .form svg {
+    width: 15%;
+    margin: 2.25rem 42.5% 0 42.5%;
+    padding: 0; }
+
+.gallery {
+  background-image: url(../img/gallery.png); }
 
 #about {
-  background: red; }
+  background: red;
+  padding-top: 500vw; }
 
 nav {
   position: fixed;
@@ -588,11 +660,9 @@ nav {
 
 .btn {
   display: block;
-  width: 175px; }
+  width: 175px;
+  height: 30px; }
   .btn .btn_link {
     font-size: 1.5rem;
-    color: #fff; }
-
-.btn_link_in {
-  font-size: 1.5rem;
-  color: #005; }
+    color: #fff;
+    padding-top: .55rem; }
