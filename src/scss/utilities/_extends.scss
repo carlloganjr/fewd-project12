@@ -38,3 +38,8 @@
     color: $text_dark;
   }
 }
+
+%p {
+  @include fonts(1rem, $text_light, center);
+  @include box(80%, .5rem auto);
+}
