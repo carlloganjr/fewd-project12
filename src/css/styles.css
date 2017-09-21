@@ -1,7 +1,7 @@
 .btn .btn_link, .btn_folio .btn_link, .title_div h1, .nav a {
   font-family: 'Passion One', sans-serif; }
 
-.title_div h2, .proj h2, .overlay h3 {
+.proj h2, .about_box h2, .title_div h2, .overlay h3 {
   font-family: 'Lalezar', sans-serif; }
 
 .nav a {
@@ -42,12 +42,32 @@
   .btn:hover .btn_link, .btn_folio:hover .btn_link {
     color: #005; }
 
-.folio_p, .overlay p {
+.folio_p, .about_box p, .overlay p {
   font-size: 1rem;
   color: #fff;
   text-align: center;
   width: 80%;
   margin: 0.5rem auto; }
+
+.folio_p, .about_box p {
+  color: #005; }
+
+.proj h2, .about_box h2 {
+  font-size: 3rem;
+  color: #005;
+  text-align: center;
+  margin: 0;
+  padding: 5rem 0 0.5rem 0; }
+
+.overlay, .about_over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 85, 0.7);
+  transition: all .4s ease-in-out; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -537,59 +557,51 @@ body::-webkit-scrollbar-thumb {
   position: relative; }
   .proj:hover .overlay {
     background: rgba(0, 0, 85, 0.58); }
-  .proj h2 {
-    font-size: 3rem;
-    color: #005;
-    text-align: center;
-    margin: 0;
-    padding: 5rem 0 0.5rem 0; }
 
-.folio_p {
-  color: #005; }
+.overlay svg {
+  width: 20%;
+  margin: 1.25rem 40% 0 40%;
+  padding: 0;
+  fill: #fff;
+  transition: all .5s ease-in-out; }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  background: rgba(0, 0, 85, 0.7);
-  transition: all .4s ease-in-out; }
-  .overlay svg {
-    width: 20%;
-    margin: 1.25rem 40% 0 40%;
-    padding: 0;
-    fill: #fff; }
-  .overlay h3 {
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-    margin: 0.5rem 0;
-    padding: 0; }
+.overlay h3 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0; }
 
-.dir {
-  background-image: url(../img/dir.png); }
-
-.video {
-  background-image: url(../img/video.png); }
-
-.dash {
-  background-image: url(../img/dash.png); }
-
-.form {
-  background-image: url(../img/form.png); }
-  .form svg {
-    width: 15%;
-    margin: 2.25rem 42.5% 0 42.5%;
-    padding: 0; }
-
-.gallery {
-  background-image: url(../img/gallery.png); }
+.form svg {
+  width: 12.5%;
+  margin: 2.25rem 42.5% 0 42.5%;
+  padding: 0; }
 
 #about {
-  background: red;
-  padding-top: 500vw; }
+  background: #d4eefc; }
+
+.about_box {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vw; }
+  .about_box:hover .about_over {
+    background: rgba(0, 0, 85, 0.58); }
+
+.about_over h3 {
+  color: white; }
+
+.about_over p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  width: 80%;
+  margin: 1rem 0 0 5%; }
+
+.about_pic {
+  position: relative;
+  background-image: url(../img/carl_logan.jpg);
+  background-size: cover; }
 
 nav {
   position: fixed;
@@ -643,7 +655,7 @@ nav {
   position: fixed;
   top: 0.8rem;
   right: 0.8rem;
-  z-index: 1001;
+  z-index: 1002;
   margin: 0;
   padding: 0 1rem;
   height: 25px;
@@ -661,6 +673,16 @@ nav {
     #menu:hover p {
       color: #005;
       font-weight: bold; }
+
+.menu_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: rgba(0, 0, 85, 0.9);
+  height: 0;
+  transition: all .4s ease; }
 
 .btn {
   display: block;

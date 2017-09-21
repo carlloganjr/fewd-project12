@@ -40,7 +40,7 @@ nav {
 }
 
 #menu {
-  @include position(fixed, .8rem, $r: .8rem, $z: 1001);
+  @include position(fixed, .8rem, $r: .8rem, $z: 1002);
   @include box($n, 0, 0 1rem, 25px);
   @include borders(solid 1px $bdr_light, 1rem);
   color: $text_light;
@@ -57,4 +57,11 @@ nav {
       @include fonts($n, $text_dark, $n, bold);
     }
   }
+}
+
+.menu_bg {
+  @include position(fixed, 0, 0, 0, $n, 1001);
+  background: $nav_dark;
+  height: 0;
+  transition: all .4s ease;
 }

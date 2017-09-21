@@ -15,24 +15,20 @@
     background: rgba(0, 0, 85, .58);
   }
   h2 {
-    @extend %lalezar_font;
-    @include fonts(3rem, $text_dark, center);
-    @include box($n, 0, 5rem 0 .5rem 0);
+    @extend %h2;
   }
 }
 
 .folio_p {
-  @extend %p;
-  color: $text_dark;
+  @extend %p_dark;
 }
 
 .overlay {
-  @include position(absolute, 0, 0, 0, 0, 2);
-  background: $folio_dark;
-  transition: all .4s ease-in-out;
+  @extend %overlay;
   svg {
     @include box(20%, 1.25rem 40% 0 40%, 0);
     fill: $folio_light;
+    transition: all .5s ease-in-out;
   }
   h3 {
     @extend %lalezar_font;
@@ -44,25 +40,25 @@
   }
 }
 
-.dir {
-  background-image: url(../img/dir.png);
-}
-
-.video {
-  background-image: url(../img/video.png);
-}
-
-.dash {
-  background-image: url(../img/dash.png);
-}
+// .dir {
+//   background-image: url(../img/dir.png);
+// }
+//
+// .video {
+//   background-image: url(../img/video.png);
+// }
+//
+// .dash {
+//   background-image: url(../img/dash.png);
+// }
 
 .form {
-  background-image: url(../img/form.png);
+  // background-image: url(../img/form.png);
   svg {
-    @include box(15%, 2.25rem 42.5% 0 42.5%, 0);
+    @include box(12.5%, 2.25rem 42.5% 0 42.5%, 0);
   }
 }
 
-.gallery {
-  background-image: url(../img/gallery.png);
-}
+// .gallery {
+//   background-image: url(../img/gallery.png);
+// }

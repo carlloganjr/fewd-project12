@@ -43,3 +43,20 @@
   @include fonts(1rem, $text_light, center);
   @include box(80%, .5rem auto);
 }
+
+%p_dark {
+  @extend %p;
+  color: $text_dark;
+}
+
+%h2 {
+  @extend %lalezar_font;
+  @include fonts(3rem, $text_dark, center);
+  @include box($n, 0, 5rem 0 .5rem 0);
+}
+
+%overlay {
+  @include position(absolute, 0, 0, 0, 0, 2);
+  background: $folio_dark;
+  transition: all .4s ease-in-out;
+}
