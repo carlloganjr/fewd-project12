@@ -61,7 +61,7 @@ nav {
 
 .menu_bg {
   @include position(fixed, 0, 0, 0, $n, 1001);
-  background: $nav_dark;
+  background: $nav_mid;
   height: 0;
   transition: all .4s ease;
 }

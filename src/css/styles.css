@@ -57,7 +57,7 @@
   color: #005;
   text-align: center;
   margin: 0;
-  padding: 5rem 0 0.5rem 0; }
+  padding: 30% 0 0.5rem 0; }
 
 .overlay, .about_over {
   position: absolute;
@@ -528,7 +528,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 3.5rem;
     color: #ffc;
     font-weight: 400;
-    margin: 5.5rem 0 0 0;
+    margin: 4.5rem 0 0 0;
     padding: 0;
     text-shadow: 0 0 18px black, 0 0 18px rgba(0, 0, 0, 0.1); }
   .title_div h2 {
@@ -536,7 +536,7 @@ body::-webkit-scrollbar-thumb {
     color: #ffc;
     font-weight: 400;
     margin: 0;
-    padding: 0 0 1rem 0; }
+    padding: 0; }
 
 #portfolio {
   background: #fff; }
@@ -563,6 +563,7 @@ body::-webkit-scrollbar-thumb {
   margin: 1.25rem 40% 0 40%;
   padding: 0;
   fill: #fff;
+  stroke: #fff;
   transition: all .5s ease-in-out; }
 
 .overlay h3 {
@@ -576,6 +577,9 @@ body::-webkit-scrollbar-thumb {
   width: 12.5%;
   margin: 2.25rem 42.5% 0 42.5%;
   padding: 0; }
+
+.soon svg {
+  padding-top: 18%; }
 
 #about {
   background: #d4eefc; }
@@ -680,23 +684,66 @@ nav {
   left: 0;
   right: 0;
   z-index: 1001;
-  background: rgba(0, 0, 85, 0.9);
+  background: rgba(0, 0, 85, 0.7);
   height: 0;
   transition: all .4s ease; }
 
 .btn {
   display: block;
   width: 175px;
-  height: 30px; }
+  height: 30px;
+  transition: all .5s ease; }
   .btn .btn_link {
     font-size: 1.5rem;
     color: #fff;
     padding-top: .55rem; }
 
 .btn_folio {
-  width: 65px;
+  width: 67px;
   height: 15px; }
   .btn_folio .btn_link {
     font-size: 1.25rem;
     color: #fff;
-    padding: 0.25rem 0 0 0.9rem; }
+    padding: 0.25rem 0 0 1rem; }
+
+.contact {
+  width: 90%;
+  margin: 0 5%;
+  padding: 0;
+  position: fixed;
+  bottom: -100%;
+  z-index: 2;
+  text-align: center;
+  transition: all .6s ease-in-out; }
+  .contact a {
+    text-decoration: none;
+    display: inline;
+    margin: 0 .3rem; }
+    .contact a:hover .fil1 {
+      transform: scale(1.05);
+      transform-origin: 50% 50%;
+      fill: yellow; }
+  .contact .fil0 {
+    fill: #000066; }
+  .contact .fil2 {
+    fill: #597A9C; }
+  .contact .fil3 {
+    fill: yellow; }
+  .contact .fil1 {
+    fill: white;
+    transition: all .5s ease; }
+
+.icon_github {
+  width: 60px; }
+
+.icon_email {
+  width: 48px; }
+
+.icon_linkedin {
+  width: 55px; }
+
+.icon_instagram {
+  width: 60px; }
+
+.toggle_contact {
+  bottom: 0; }

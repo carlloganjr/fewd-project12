@@ -2,6 +2,7 @@
   display: block;
   @include box(175px, $tall: 30px);
   @extend %btn;
+  transition: all .5s ease;
   .btn_link {
     @include fonts(1.5rem, $text_light);
     padding-top: .55rem;
@@ -9,10 +10,10 @@
 }
 
 .btn_folio {
-  @include box(65px, $tall: 15px);
+  @include box(67px, $tall: 15px);
   @extend %btn;
   .btn_link {
     @include fonts(1.25rem, $text_light);
-    @include box($n, $n, .25rem 0 0 .9rem);
+    @include box($n, $n, .25rem 0 0 1rem);
   }
 }

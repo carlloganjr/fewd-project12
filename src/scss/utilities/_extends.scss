@@ -52,7 +52,7 @@
 %h2 {
   @extend %lalezar_font;
   @include fonts(3rem, $text_dark, center);
-  @include box($n, 0, 5rem 0 .5rem 0);
+  @include box($n, 0, 30% 0 .5rem 0);
 }
 
 %overlay {

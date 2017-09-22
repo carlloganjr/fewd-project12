@@ -1,0 +1,48 @@
+.contact {
+  @include box(90%, 0 5%, 0);
+  @include position(fixed, $b: -100%, $z: 2);
+  text-align: center;
+  transition: all .6s ease-in-out;
+  a {
+    text-decoration: none;
+    display: inline;
+    margin: 0 .3rem;
+    &:hover .fil1 {
+      transform: scale(1.05);
+      transform-origin: 50% 50%;
+      fill: yellow;
+    }
+  }
+  .fil0 {fill:#000066;
+  }
+
+  .fil2 {fill:#597A9C}
+
+  .fil3 {fill:yellow}
+
+  .fil1 {
+    fill:white;
+    transition: all .5s ease;
+  }
+}
+
+
+.icon_github {
+  @include box(60px);
+}
+
+.icon_email {
+  @include box(48px);
+}
+
+.icon_linkedin {
+  @include box(55px);
+}
+
+.icon_instagram {
+  @include box(60px);
+}
+
+.toggle_contact {
+  bottom: 0;
+}

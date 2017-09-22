@@ -28,6 +28,7 @@
   svg {
     @include box(20%, 1.25rem 40% 0 40%, 0);
     fill: $folio_light;
+    stroke: $folio_light;
     transition: all .5s ease-in-out;
   }
   h3 {
@@ -40,25 +41,14 @@
   }
 }
 
-// .dir {
-//   background-image: url(../img/dir.png);
-// }
-//
-// .video {
-//   background-image: url(../img/video.png);
-// }
-//
-// .dash {
-//   background-image: url(../img/dash.png);
-// }
-
 .form {
-  // background-image: url(../img/form.png);
   svg {
     @include box(12.5%, 2.25rem 42.5% 0 42.5%, 0);
   }
 }
 
-// .gallery {
-//   background-image: url(../img/gallery.png);
-// }
+.soon {
+  svg {
+    padding-top: 18%;
+  }
+}
