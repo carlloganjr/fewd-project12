@@ -1,8 +1,7 @@
 #home {
   @include position(fixed, 0, 0, $z: 1);
   @include box(100vw, 0, 0, 100vh);
-  background: url('../img/city_scene.png') no-repeat bottom/1550px,
-  linear-gradient(to top, $gradient_light, $gradient_dark);
+  // background: url('../img/city_scene.png') no-repeat bottom/1550px,
 }
 
 .title_div {
@@ -20,4 +19,33 @@
     @include fonts(1.3rem, $text_mid, $n, 400);
     @include box($n, 0, 0);
   }
+}
+
+#home_bg {
+  @extend %fixed;
+  svg {
+    @include position(absolute, $b: 0);
+    @include box(1550px, 0, 0);
+    transform: translateX(-50%);
+    margin-left: 50%;
+
+    .fil6 {fill:#000066}
+    .fil4 {fill:#00CCFF}
+    .fil5 {fill:#336699}
+    .fil2 {fill:#427DB8}
+    .fil7 {fill:#597A9C}
+    .fil3 {fill:#70AEEB}
+    .fil1 {fill:#FFFFCC}
+    .fil0 {fill:#81C7E5}
+
+    .lights_off {
+      fill: #597A9C;
+    }
+  }
+}
+
+.home_bg {
+  @extend %fixed;
+  background: linear-gradient(to top, $gradient_light, $gradient_dark);
+  z-index: -5;
 }

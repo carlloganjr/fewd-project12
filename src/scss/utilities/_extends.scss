@@ -60,3 +60,35 @@
   background: $folio_dark;
   transition: all .4s ease-in-out;
 }
+
+%fixed {
+  @include position(fixed, 0, 0, 0, 0, 0);
+  @include box(100vw, 0, 0, 100vh);
+  overflow: hidden;
+}
+
+%speech {
+	position: absolute;
+	background: $icon_light;
+	border-radius: .4em;
+  &:after {
+  	content: '';
+  	position: absolute;
+  	bottom: 0;
+  	left: 70%;
+  	width: 0;
+  	height: 0;
+  	border: 1.75em solid transparent;
+  	border-top-color: $icon_light;
+  	border-bottom: 0;
+  	border-right: 0;
+  	margin-left: -0.875em;
+  	margin-bottom: -1.75em;
+  }
+}
+
+%speech_text {
+  @extend %lalezar_font;
+  @include fonts(2rem, $text_dark, center);
+  margin: .5rem 0
+}

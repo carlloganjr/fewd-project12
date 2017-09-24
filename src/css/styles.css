@@ -1,7 +1,7 @@
 .btn .btn_link, .btn_folio .btn_link, .title_div h1, .nav a {
   font-family: 'Passion One', sans-serif; }
 
-.proj h2, .about_box h2, .title_div h2, .overlay h3 {
+.proj h2, .about_box h2, .speech_on p, .speech_off p, .title_div h2, .overlay h3, .funtrols li h4, #fun_close {
   font-family: 'Lalezar', sans-serif; }
 
 .nav a {
@@ -68,6 +68,43 @@
   z-index: 2;
   background: rgba(0, 0, 85, 0.7);
   transition: all .4s ease-in-out; }
+
+#home_bg, .home_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden; }
+
+.speech_on, .speech_off {
+  position: absolute;
+  background: #fff;
+  border-radius: .4em; }
+  .speech_on:after, .speech_off:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    width: 0;
+    height: 0;
+    border: 1.75em solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -0.875em;
+    margin-bottom: -1.75em; }
+
+.speech_on p, .speech_off p {
+  font-size: 2rem;
+  color: #005;
+  text-align: center;
+  margin: .5rem 0; }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -517,8 +554,7 @@ body::-webkit-scrollbar-thumb {
   width: 100vw;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background: url("../img/city_scene.png") no-repeat bottom/1550px, linear-gradient(to top, #7aa0ff, #039); }
+  height: 100vh; }
 
 .title_div {
   width: 90%;
@@ -537,6 +573,37 @@ body::-webkit-scrollbar-thumb {
     font-weight: 400;
     margin: 0;
     padding: 0; }
+
+#home_bg svg {
+  position: absolute;
+  bottom: 0;
+  width: 1550px;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+  margin-left: 50%; }
+  #home_bg svg .fil6 {
+    fill: #000066; }
+  #home_bg svg .fil4 {
+    fill: #00CCFF; }
+  #home_bg svg .fil5 {
+    fill: #336699; }
+  #home_bg svg .fil2 {
+    fill: #427DB8; }
+  #home_bg svg .fil7 {
+    fill: #597A9C; }
+  #home_bg svg .fil3 {
+    fill: #70AEEB; }
+  #home_bg svg .fil1 {
+    fill: #FFFFCC; }
+  #home_bg svg .fil0 {
+    fill: #81C7E5; }
+  #home_bg svg .lights_off {
+    fill: #597A9C; }
+
+.home_bg {
+  background: linear-gradient(to top, #7aa0ff, #039);
+  z-index: -5; }
 
 #portfolio {
   background: #fff; }
@@ -722,28 +789,181 @@ nav {
     .contact a:hover .fil1 {
       transform: scale(1.05);
       transform-origin: 50% 50%;
-      fill: yellow; }
+      fill: #fcef02; }
   .contact .fil0 {
     fill: #000066; }
   .contact .fil2 {
     fill: #597A9C; }
   .contact .fil3 {
-    fill: yellow; }
+    fill: #fcef02; }
   .contact .fil1 {
     fill: white;
     transition: all .5s ease; }
 
 .icon_github {
-  width: 60px; }
-
-.icon_email {
-  width: 48px; }
-
-.icon_linkedin {
   width: 55px; }
 
+.icon_email {
+  width: 45px; }
+
+.icon_linkedin {
+  width: 50px; }
+
 .icon_instagram {
-  width: 60px; }
+  width: 55px; }
 
 .toggle_contact {
   bottom: 0; }
+
+@keyframes lights_on {
+  0% {
+    fill: #ffc; }
+  10% {
+    fill: #597A9C; }
+  20% {
+    fill: #ffc; }
+  40% {
+    fill: #597A9C; }
+  80% {
+    fill: #ffc; }
+  90% {
+    fill: #597A9C; }
+  100% {
+    fill: #ffc; } }
+
+@keyframes blast_off {
+  0% {
+    transform: translateX(-50.25%); }
+  10% {
+    transform: translateX(-49.5%); }
+  20% {
+    transform: translateX(-50.75%); }
+  30% {
+    transform: translateX(-49.75%); }
+  40% {
+    transform: translateX(-50.5%); }
+  50% {
+    transform: translateX(-50%); }
+  60% {
+    transform: translateX(-49.5%); }
+  70% {
+    transform: translateX(-49.75%); }
+  80% {
+    transform: translateX(-50.75%); }
+  90% {
+    transform: translateX(-49.25%); }
+  100% {
+    transform: translateX(-50%); } }
+
+.fun_panel {
+  width: 250px;
+  margin: 4.5rem auto 0 auto;
+  height: 257px;
+  transition: all .5s ease; }
+
+.funtrols {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 3rem 0 0 0;
+  padding: 0; }
+  .funtrols li {
+    list-style: none;
+    width: 80px;
+    margin: 0.5rem 0;
+    padding: 0;
+    height: 80px;
+    border: solid 2px #fff;
+    border-radius: 0.5rem;
+    transition: all .5s ease;
+    cursor: default; }
+    .funtrols li svg {
+      width: 40px;
+      margin: 0.5rem 0 0 0;
+      padding: 0; }
+      .funtrols li svg .fil0 {
+        fill: #fff;
+        transition: all .5s ease; }
+    .funtrols li .ufo_svg {
+      width: 50px;
+      margin: 1.2rem 0 0.65rem 0; }
+    .funtrols li .blast_svg {
+      width: 47px;
+      margin: 0.8rem 0 0.1rem 0; }
+    .funtrols li h4 {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 400;
+      margin: 0;
+      padding: 0; }
+    .funtrols li:hover {
+      background: #b5edfc;
+      border-color: #b5edfc; }
+    .funtrols li:hover .fil0,
+    .funtrols li:hover h4 {
+      fill: #039;
+      color: #039; }
+
+.lights_on {
+  animation: lights_on 2s linear forwards; }
+
+.funtrols_svgs {
+  width: 550px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  z-index: 3; }
+
+.speech_on {
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  height: 85px;
+  top: 100%;
+  left: 250px;
+  transition: all .3s ease; }
+
+.speech_off {
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  height: 85px;
+  top: 100%;
+  left: 250px;
+  transition: all .3s ease; }
+
+#fun_close {
+  position: relative;
+  top: 0;
+  left: 75px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  visibility: collapse;
+  transform: translateX(-50%);
+  margin-left: 50%; }
+  #fun_close:hover {
+    color: #005; }
+
+.blast_off {
+  animation: blast_off 0.7s 5 cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
+.rocket {
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  height: 250px;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/rocket.svg) no-repeat center;
+  background-size: contain; }

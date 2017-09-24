@@ -10,7 +10,7 @@
     &:hover .fil1 {
       transform: scale(1.05);
       transform-origin: 50% 50%;
-      fill: yellow;
+      fill: #fcef02;
     }
   }
   .fil0 {fill:#000066;
@@ -18,7 +18,7 @@
 
   .fil2 {fill:#597A9C}
 
-  .fil3 {fill:yellow}
+  .fil3 {fill:#fcef02}
 
   .fil1 {
     fill:white;
@@ -28,19 +28,19 @@
 
 
 .icon_github {
-  @include box(60px);
-}
-
-.icon_email {
-  @include box(48px);
-}
-
-.icon_linkedin {
   @include box(55px);
 }
 
+.icon_email {
+  @include box(45px);
+}
+
+.icon_linkedin {
+  @include box(50px);
+}
+
 .icon_instagram {
-  @include box(60px);
+  @include box(55px);
 }
 
 .toggle_contact {

@@ -98,3 +98,67 @@ $('.contact').click(function(e) {
     $(this).removeClass('toggle_contact');
     toggle_text('#touch', 'get in touch', 'thanks! i\'m done');
 });
+
+// open the funtrols panel
+$('#fun_panel').click(function(e) {
+  e.preventDefault();
+  $('.slide_up').slideUp();
+  $(this).addClass('fun_panel');
+  $('#fun_panel div').removeClass('btn_in');
+  $('#fun_close').css('visibility', 'visible');
+  if($('.contact').hasClass('toggle_contact')) {
+    $('.contact').removeClass('toggle_contact');
+    toggle_text('#touch', 'get in touch', 'thanks! i\'m done');
+  }
+});
+
+// lights! button -- toggle between lights on and lights off
+$('#lights').click(function() {
+  $("#fun_panel").slideUp(function() {
+    $('#fun_close').css('visibility', 'collapse');
+    $('.on_off').toggleClass('lights_on');
+    $('.on_off').addClass(function() {
+      if($('.on_off').hasClass('lights_on')) {
+        return '';
+      } else {
+        return 'lights_off';
+      }
+    });
+    if($('.on_off').hasClass('lights_on')) {
+      setTimeout(function() {
+        $('.speech_on').css('top', '-175px');
+      }, 2000);
+      setTimeout(function() {
+        $('.speech_on').css('top', '-100%');
+      }, 5200);
+      setTimeout(function() {
+        $("#fun_panel").slideDown();
+        $('#fun_close').css('visibility', 'visible');
+      }, 5700);
+    } else {
+      setTimeout(function() {
+        $('.speech_off').css('top', '-175px');
+      }, 700);
+      setTimeout(function() {
+        $('.speech_off').css('top', '-100%');
+      }, 3700);
+      setTimeout(function() {
+        $("#fun_panel").slideDown();
+        $('#fun_close').css('visibility', 'visible');
+      }, 4000);
+    }
+  });
+});
+
+$('#blast').click(function() {
+  $('.city').addClass('blast_off');
+});
+
+// close the funtrols panel
+$('#fun_close').click(function() {
+    $('.slide_up').slideDown();
+    $("#fun_panel").removeClass('fun_panel');
+    $('#fun_panel div').addClass('btn_in');
+    $('#fun_close').css('visibility', 'collapse');
+    $('.on_off').removeClass('lights_on lights_off blast_off');
+});

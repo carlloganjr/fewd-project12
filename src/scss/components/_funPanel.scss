@@ -1,0 +1,130 @@
+@keyframes lights_on {
+  0% {fill: #ffc}
+  10% {fill: #597A9C}
+  20% {fill: #ffc}
+  40% {fill: #597A9C}
+  80% {fill: #ffc}
+  90% {fill: #597A9C}
+  100% {fill: #ffc}
+}
+
+@keyframes blast_off {
+  0% {transform: translateX(-50.25%)}
+  10% {transform: translateX(-49.5%)}
+  20% {transform: translateX(-50.75%)}
+  30% {transform: translateX(-49.75%)}
+  40% {transform: translateX(-50.5%)}
+  50% {transform: translateX(-50%)}
+  60% {transform: translateX(-49.5%)}
+  70% {transform: translateX(-49.75%)}
+  80% {transform: translateX(-50.75%)}
+  90% {transform: translateX(-49.25%)}
+  100% {transform: translateX(-50%)}
+}
+
+.fun_panel {
+  @include box(250px, 4.5rem auto 0 auto, $n, 257px);
+  transition: all .5s ease;
+}
+
+.funtrols {
+  @include position(relative, $z: 10);
+  @include flex(row, wrap, space-around);
+  @include box(100%, 3rem 0 0 0, 0);
+  li {
+    list-style: none;
+    @include box(80px, .5rem 0, 0, 80px);
+    @include borders(solid 2px $bdr_light, .5rem);
+    transition: all .5s ease;
+    cursor: default;
+    svg {
+      @include box(40px, .5rem 0 0 0, 0);
+      .fil0 {
+        fill: #fff;
+        transition: all .5s ease;
+      }
+    }
+    .ufo_svg {
+      @include box(50px, 1.2rem 0 .65rem 0);
+    }
+    .blast_svg {
+      @include box(47px, .8rem 0 .1rem 0);
+    }
+    h4 {
+      @extend %lalezar_font;
+      @include fonts(1.5rem, $text_light, $n, 400);
+      @include box($n, 0, 0);
+    }
+    &:hover {
+      background: $icon_mid;
+      border-color: $icon_mid;
+
+    }
+    &:hover .fil0,
+    &:hover h4 {
+      fill: $icon_dark;
+      color: $icon_dark;
+    }
+  }
+}
+
+
+
+.lights_on {
+  animation: lights_on 2s linear forwards;
+}
+
+.funtrols_svgs {
+  @include box(550px, 0, 0);
+  @include position(absolute, $b: 0);
+  transform: translateX(-50%);
+  margin-left: 50%;
+  z-index: 3;
+
+}
+
+.speech_on {
+  @include box(150px, 0, 0, 85px);
+  @include position($n, 100%, 250px);
+  transition: all .3s ease;
+  @extend %speech;
+  p {
+    @extend %speech_text;
+  }
+}
+
+.speech_off {
+  @include box(150px, 0, 0, 85px);
+  @include position($n, 100%, 250px);
+  transition: all .3s ease;
+  @extend %speech;
+  p {
+    @extend %speech_text;
+  }
+}
+
+#fun_close {
+  @extend %lalezar_font;
+  @include position(relative, 0, 75px);
+  @include fonts(1rem, $text_light);
+  cursor: pointer;
+  visibility: collapse;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  &:hover {
+    color: $text_dark;
+  }
+}
+
+.blast_off {
+  animation: blast_off .7s 5 cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.rocket {
+  @include box(50px, 0, 0, 250px);
+  transform: translateX(-50%);
+  margin-left: 50%;
+  @include position(absolute, 0, 0);
+  background: url(../img/rocket.svg) no-repeat center;
+  background-size: contain;
+}
