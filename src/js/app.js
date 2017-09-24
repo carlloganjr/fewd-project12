@@ -30,9 +30,15 @@ menu.addEventListener('click', function(e) {
     navigation.style.zIndex = '1000';
     ul.style.transform = 'translateX(0)';
     menu_p.innerHTML = 'CLOSE';
+    $('.carl_logo').css('top', '7px');
   } else if(e.target && menu_p.innerHTML == 'CLOSE'){
     ul.style.transform = 'translateX(100%)';
     menu_p.innerHTML = 'MENU';
+    if($('.slide_up').css('display') === 'none') {
+      $('.carl_logo').css('top', '7px');
+    } else {
+      $('.carl_logo').css('top', '-100%');
+    }
     setTimeout(function() {
       navigation.style.zIndex = '-1';
     }, 600);
@@ -67,10 +73,17 @@ $(window).scroll(function() {
     }
     if(menu_bg <= y_scroll) {
       $('.menu_bg').css('height', '55px');
+      $('.carl_logo').css('top', '7px');
     } else {
       $('.menu_bg').css('height', '0');
+      if($('.slide_up').css('display') === 'none') {
+        $('.carl_logo').css('top', '7px');
+      } else {
+        $('.carl_logo').css('top', '-100%');
+      }
     }
   });
+  $('.about_pic').css('background-image', 'url(img/carl_logan.jpg)');
 });
 
 function toggle_text(element, is_text, to_be_text) {
@@ -102,7 +115,9 @@ $('.contact').click(function(e) {
 // open the funtrols panel
 $('#fun_panel').click(function(e) {
   e.preventDefault();
-  $('.slide_up').slideUp();
+  $('.slide_up').slideUp(function() {
+    $('.carl_logo').css('top', '7px');
+  });
   $(this).addClass('fun_panel');
   $('#fun_panel div').removeClass('btn_in');
   $('#fun_close').css('visibility', 'visible');
@@ -151,6 +166,7 @@ $('#lights').click(function() {
 });
 
 $('#blast').click(function() {
+  $('.rocket').css('background-image', 'url(img/rocket.svg)');
   $("#fun_panel").slideUp(function() {
     $('.city').addClass('blast_off');
     $('.rocket').addClass('rocket_blast');
@@ -164,8 +180,42 @@ $('#blast').click(function() {
   });
 });
 
+$('#ufo').click(function() {
+  $("#fun_panel").slideUp(function() {
+    $('#fun_close').css('visibility', 'collapse');
+    $('.ufo_swoop').addClass('ufo_swoop_swing');
+    $('.ufo').addClass('ufo_swing');
+    setTimeout(function() {
+      $('#beam').css('opacity', '1');
+    }, 450);
+    setTimeout(function() {
+      $('#dude').css({'opacity': '1', 'top': '-15px'});
+    }, 900);
+    setTimeout(function() {
+      $('#dude').css('opacity', '0');
+      $('#beam').css('opacity', '0');
+    }, 1500);
+    setTimeout(function() {
+      $('.ufo_swoop').removeClass('ufo_swoop_swing');
+      $('.ufo').removeClass('ufo_swing');
+      $('#dude').css('top', '110px');
+    }, 2100);
+    setTimeout(function() {
+      $('.ufo_date').css('top', '-175px');
+    }, 2500);
+    setTimeout(function() {
+      $('.ufo_date').css('top', '-100%');
+    }, 5500);
+    setTimeout(function() {
+      $("#fun_panel").slideDown();
+      $('#fun_close').css('visibility', 'visible');
+    }, 6000);
+  });
+});
+
 // close the funtrols panel
 $('#fun_close').click(function() {
+    $('.carl_logo').css('top', '-100%');
     $('.slide_up').slideDown();
     $("#fun_panel").removeClass('fun_panel');
     $('#fun_panel div').addClass('btn_in');

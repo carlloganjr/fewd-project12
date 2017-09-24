@@ -4,6 +4,23 @@
   // background: url('../img/city_scene.png') no-repeat bottom/1550px,
 }
 
+.carl_logo {
+  @include box($n, 0, 0, 40px);
+  @include position(fixed, -100%, -97px, $z: 1003);
+  transition: all .5s ease;
+  cursor: pointer;
+  &:hover svg{
+    .fil0 {fill:$carl_mid}
+  }
+  svg {
+    @include box(100%, 0, 0, 100%);
+    .fil0 {
+      fill:$text_light;
+      transition: all 1s ease;
+    }
+  }
+}
+
 .title_div {
   @include box(90%, 0 auto);
   text-align: center;
@@ -44,6 +61,11 @@
   }
 }
 
+// @keyframes stars {
+//   from {transform: translateX(-50%) rotate(0deg);}
+//   to {transform: translateX(-50%) rotate(360deg);}
+// }
+
 .home_bg {
   @extend %fixed;
   background: linear-gradient(to top, $gradient_light, $gradient_dark);
@@ -52,6 +74,7 @@
     @include position(absolute, $l: 40px, $b: 0);
     @include box(1550px, 0, 0);
     transform: translateX(-50%);
+    transform-origin: 50% 50%;
     margin-left: 50%;
     .fil1 {fill:#FFFFCC}
     .fil0 {fill:#81C7E5}

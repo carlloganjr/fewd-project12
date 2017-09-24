@@ -1,7 +1,7 @@
 .btn .btn_link, .btn_folio .btn_link, .title_div h1, .nav a {
   font-family: 'Passion One', sans-serif; }
 
-.proj h2, .about_box h2, .speech_on p, .speech_off p, .title_div h2, .overlay h3, .funtrols li h4, #fun_close {
+.proj h2, .about_box h2, .speech_on p, .speech_off p, .ufo_date p, .title_div h2, .overlay h3, .funtrols li h4, #fun_close {
   font-family: 'Lalezar', sans-serif; }
 
 .nav a {
@@ -82,11 +82,11 @@
   height: 100vh;
   overflow: hidden; }
 
-.speech_on, .speech_off {
+.speech_on, .speech_off, .ufo_date {
   position: absolute;
   background: #fff;
   border-radius: .4em; }
-  .speech_on:after, .speech_off:after {
+  .speech_on:after, .speech_off:after, .ufo_date:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -100,7 +100,7 @@
     margin-left: -0.875em;
     margin-bottom: -1.75em; }
 
-.speech_on p, .speech_off p {
+.speech_on p, .speech_off p, .ufo_date p {
   font-size: 2rem;
   color: #005;
   text-align: center;
@@ -556,6 +556,27 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   height: 100vh; }
 
+.carl_logo {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  position: fixed;
+  top: -100%;
+  left: -97px;
+  z-index: 1003;
+  transition: all .5s ease;
+  cursor: pointer; }
+  .carl_logo:hover svg .fil0 {
+    fill: #b5edfc; }
+  .carl_logo svg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%; }
+    .carl_logo svg .fil0 {
+      fill: #fff;
+      transition: all 1s ease; }
+
 .title_div {
   width: 90%;
   margin: 0 auto;
@@ -612,6 +633,7 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
     padding: 0;
     transform: translateX(-50%);
+    transform-origin: 50% 50%;
     margin-left: 50%; }
     .home_bg svg .fil1 {
       fill: #FFFFCC; }
@@ -684,7 +706,6 @@ body::-webkit-scrollbar-thumb {
 
 .about_pic {
   position: relative;
-  background-image: url(../img/carl_logan.jpg);
   background-size: cover; }
 
 nav {
@@ -802,7 +823,7 @@ nav {
     .contact a:hover .fil1 {
       transform: scale(1.05);
       transform-origin: 50% 50%;
-      fill: #fcef02; }
+      fill: #a979fc; }
   .contact .fil0 {
     fill: #000066; }
   .contact .fil2 {
@@ -958,6 +979,17 @@ nav {
   left: 250px;
   transition: all .3s ease; }
 
+.ufo_date {
+  width: 170px;
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  top: 100%;
+  left: 225px;
+  transition: all .3s ease; }
+  .ufo_date p {
+    font-size: 1.5rem; }
+
 #fun_close {
   position: relative;
   top: 0;
@@ -988,5 +1020,53 @@ nav {
   left: -55px;
   bottom: -100%;
   z-index: 2;
-  background: url(../img/rocket.svg) no-repeat center;
-  background-size: contain; }
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.ufo_swoop {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  transition: all .4s ease; }
+
+.ufo {
+  width: 125px;
+  margin: 0;
+  padding: 0;
+  height: 125px;
+  position: absolute;
+  left: -145px;
+  bottom: 350px;
+  z-index: 5;
+  transition: all 1s ease; }
+  .ufo svg {
+    width: 125px;
+    margin: 0;
+    padding: 0;
+    height: 125px;
+    opacity: 0;
+    transition: all .25s ease; }
+    .ufo svg #beam {
+      opacity: 0;
+      transition: all .8s ease; }
+
+#dude {
+  opacity: 0;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  z-index: 4;
+  transition: all 1s ease; }
+  #dude .fil1a {
+    fill: #000066; }
+
+.ufo_swoop_swing {
+  transform: translate(50%, 315px); }
+
+.ufo_swing {
+  transform: translateX(160px); }
+  .ufo_swing svg {
+    opacity: 1; }
