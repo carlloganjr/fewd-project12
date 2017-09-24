@@ -604,6 +604,19 @@ body::-webkit-scrollbar-thumb {
 .home_bg {
   background: linear-gradient(to top, #7aa0ff, #039);
   z-index: -5; }
+  .home_bg svg {
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    width: 1550px;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    margin-left: 50%; }
+    .home_bg svg .fil1 {
+      fill: #FFFFCC; }
+    .home_bg svg .fil0 {
+      fill: #81C7E5; }
 
 #portfolio {
   background: #fff; }
@@ -855,6 +868,12 @@ nav {
   100% {
     transform: translateX(-50%); } }
 
+@keyframes rocket_blast {
+  from {
+    bottom: -100%; }
+  to {
+    bottom: 100%; } }
+
 .fun_panel {
   width: 250px;
   margin: 4.5rem auto 0 auto;
@@ -953,7 +972,10 @@ nav {
     color: #005; }
 
 .blast_off {
-  animation: blast_off 0.7s 5 cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+  animation: blast_off 0.7s 7 cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
+.rocket_blast {
+  animation: rocket_blast 5s cubic-bezier(0.07, 0.59, 0.94, 0.29) forwards; }
 
 .rocket {
   width: 50px;
@@ -963,7 +985,8 @@ nav {
   transform: translateX(-50%);
   margin-left: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
+  left: -55px;
+  bottom: -100%;
+  z-index: 2;
   background: url(../img/rocket.svg) no-repeat center;
   background-size: contain; }

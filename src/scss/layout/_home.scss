@@ -48,4 +48,12 @@
   @extend %fixed;
   background: linear-gradient(to top, $gradient_light, $gradient_dark);
   z-index: -5;
+  svg {
+    @include position(absolute, $l: 40px, $b: 0);
+    @include box(1550px, 0, 0);
+    transform: translateX(-50%);
+    margin-left: 50%;
+    .fil1 {fill:#FFFFCC}
+    .fil0 {fill:#81C7E5}
+  }
 }

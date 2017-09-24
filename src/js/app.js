@@ -151,7 +151,17 @@ $('#lights').click(function() {
 });
 
 $('#blast').click(function() {
-  $('.city').addClass('blast_off');
+  $("#fun_panel").slideUp(function() {
+    $('.city').addClass('blast_off');
+    $('.rocket').addClass('rocket_blast');
+    $('#fun_close').css('visibility', 'collapse');
+    setTimeout(function() {
+      $('.city').removeClass('blast_off');
+      $('.rocket').removeClass('rocket_blast');
+      $("#fun_panel").slideDown();
+      $('#fun_close').css('visibility', 'visible');
+    }, 5500);
+  });
 });
 
 // close the funtrols panel
@@ -160,5 +170,5 @@ $('#fun_close').click(function() {
     $("#fun_panel").removeClass('fun_panel');
     $('#fun_panel div').addClass('btn_in');
     $('#fun_close').css('visibility', 'collapse');
-    $('.on_off').removeClass('lights_on lights_off blast_off');
+    $('.on_off').removeClass('lights_on lights_off');
 });
