@@ -47,6 +47,10 @@
     @media #{$break-xl} {
       @content;
     }
+  } @else if $size == 'xxl' {
+    @media #{$break-xxl} {
+      @content;
+    }
   }
 }
 

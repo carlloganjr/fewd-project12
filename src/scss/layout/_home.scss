@@ -40,6 +40,10 @@
       font-size: 8.5rem;
       margin-top: 6rem;
     }
+    @include media('xxl') {
+      font-size: 10vw;
+      margin-top: 25vh;
+    }
   }
   h2 {
     @extend %lalezar_font;
@@ -51,11 +55,15 @@
     @include media('lg') {
       font-size: 2.5rem;
     }
+    @include media('xxl') {
+      font-size: 3vw;
+    }
   }
 }
 
 #home_bg {
   @extend %fixed;
+
   svg {
     @include position(absolute, $b: 0);
     @include box(1550px, 0, 0);
@@ -73,6 +81,9 @@
 
     .lights_off {
       fill: #597A9C;
+    }
+    @include media('xxl') {
+      width: 100%;
     }
   }
 }
@@ -94,5 +105,8 @@
     margin-left: 50%;
     .fil1 {fill:#FFFFCC}
     .fil0 {fill:#81C7E5}
+    @include media('xxl') {
+      width: 100%;
+    }
   }
 }

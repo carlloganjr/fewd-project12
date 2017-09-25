@@ -5,6 +5,7 @@
 html,
 body {
   @include box($n, 0, 0);
+
 }
 
 .wrapper {
@@ -18,16 +19,17 @@ body {
   @include box(100%, 0, 0);
 }
 
-body::-webkit-scrollbar {
-  width: 7px;
-  background: $scroll_light;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: $scroll_dark;
-  border-radius: 1rem;
-  // outline: 1px solid slategrey;
-}
+// body::-webkit-scrollbar {
+//   width: 7px;
+//   background: $scroll_light;
+//     -moz-appearance: scrollbartrack-vertical;
+// }
+//
+// body::-webkit-scrollbar-thumb {
+//   background-color: $scroll_dark;
+//   border-radius: 1rem;
+//   // outline: 1px solid slategrey;
+// }
 
 #psuedo_home {
   @include position($z: -2);

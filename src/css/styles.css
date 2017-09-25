@@ -554,14 +554,6 @@ body {
   margin: 0;
   padding: 0; }
 
-body::-webkit-scrollbar {
-  width: 7px;
-  background: #7aa0ff; }
-
-body::-webkit-scrollbar-thumb {
-  background-color: #039;
-  border-radius: 1rem; }
-
 #psuedo_home {
   z-index: -2;
   padding-top: 100vh;
@@ -620,6 +612,10 @@ body::-webkit-scrollbar-thumb {
       .title_div h1 {
         font-size: 8.5rem;
         margin-top: 6rem; } }
+    @media (min-width: 1550px) {
+      .title_div h1 {
+        font-size: 10vw;
+        margin-top: 25vh; } }
   .title_div h2 {
     font-size: 1.3rem;
     color: #ffc;
@@ -632,6 +628,9 @@ body::-webkit-scrollbar-thumb {
     @media (min-width: 1024px) {
       .title_div h2 {
         font-size: 2.5rem; } }
+    @media (min-width: 1550px) {
+      .title_div h2 {
+        font-size: 3vw; } }
 
 #home_bg svg {
   position: absolute;
@@ -659,6 +658,9 @@ body::-webkit-scrollbar-thumb {
     fill: #81C7E5; }
   #home_bg svg .lights_off {
     fill: #597A9C; }
+  @media (min-width: 1550px) {
+    #home_bg svg {
+      width: 100%; } }
 
 .home_bg {
   background: linear-gradient(to top, #7aa0ff, #039);
@@ -677,24 +679,28 @@ body::-webkit-scrollbar-thumb {
       fill: #FFFFCC; }
     .home_bg svg .fil0 {
       fill: #81C7E5; }
+    @media (min-width: 1550px) {
+      .home_bg svg {
+        width: 100%; } }
 
 #portfolio {
   background: #fff; }
   #portfolio ul {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin: 0;
+    width: 99.8%;
+    margin: 0 auto;
     padding: 0; }
     @media (min-width: 768px) {
       #portfolio ul {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; } }
+        flex-wrap: wrap;
+        justify-content: space-around; } }
 
 .proj {
   width: 100%;
-  margin: 0;
+  margin: 0.15rem 0;
   padding: 0;
   height: 100vw;
   overflow: hidden;
@@ -705,16 +711,14 @@ body::-webkit-scrollbar-thumb {
       height: 50vw; } }
   @media (min-width: 768px) {
     .proj {
-      width: 49.55vw;
-      margin: 0;
+      width: 48.5vw;
       padding: 0;
-      height: 49.55vw; } }
+      height: 48.5vw; } }
   @media (min-width: 1024px) {
     .proj {
-      width: 33.1vw;
-      margin: 0;
+      width: 32.5vw;
       padding: 0;
-      height: 33.1vw; } }
+      height: 32.5vw; } }
   .proj:hover .overlay {
     background: rgba(0, 0, 85, 0.58); }
 
@@ -1060,7 +1064,7 @@ nav {
     bottom: 100%; } }
 
 .fun_panel {
-  width: 250px;
+  width: 225px;
   margin: 4.5rem auto 0 auto;
   height: 257px;
   transition: all .5s ease; }
@@ -1133,9 +1137,25 @@ nav {
   margin: 0;
   padding: 0;
   height: 85px;
-  top: 100%;
+  top: -100%;
   left: 250px;
   transition: all .3s ease; }
+
+.speech_on_mid {
+  top: -100%;
+  left: 450px;
+  opacity: 0; }
+  @media (min-width: 768px) {
+    .speech_on_mid {
+      opacity: 1; } }
+
+.speech_on_right {
+  top: -100%;
+  left: 610px;
+  opacity: 0; }
+  @media (min-width: 1024px) {
+    .speech_on_right {
+      opacity: 1; } }
 
 .speech_off {
   width: 150px;
@@ -1145,6 +1165,22 @@ nav {
   top: 100%;
   left: 250px;
   transition: all .3s ease; }
+
+.speech_off_mid {
+  top: -100%;
+  left: 450px;
+  opacity: 0; }
+  @media (min-width: 768px) {
+    .speech_off_mid {
+      opacity: 1; } }
+
+.speech_off_right {
+  top: -100%;
+  left: 610px;
+  opacity: 0; }
+  @media (min-width: 1024px) {
+    .speech_off_right {
+      opacity: 1; } }
 
 .ufo_date {
   width: 170px;
@@ -1160,7 +1196,7 @@ nav {
 #fun_close {
   position: relative;
   top: 0;
-  left: 75px;
+  left: 60px;
   font-size: 1rem;
   color: #fff;
   cursor: pointer;

@@ -28,7 +28,7 @@
 }
 
 .fun_panel {
-  @include box(250px, 4.5rem auto 0 auto, $n, 257px);
+  @include box(225px, 4.5rem auto 0 auto, $n, 257px);
   transition: all .5s ease;
   @include media('med') {
     margin-top: 10rem;
@@ -93,11 +93,27 @@
 
 .speech_on {
   @include box(150px, 0, 0, 85px);
-  @include position($n, 100%, 250px);
+  @include position($n, -100%, 250px);
   transition: all .3s ease;
   @extend %speech;
   p {
     @extend %speech_text;
+  }
+}
+
+.speech_on_mid {
+  @include position($n, -100%, 450px);
+  opacity: 0;
+  @include media('med') {
+    opacity: 1;
+  }
+}
+
+.speech_on_right {
+  @include position($n, -100%, 610px);
+  opacity: 0;
+  @include media('lg') {
+    opacity: 1;
   }
 }
 
@@ -108,6 +124,22 @@
   @extend %speech;
   p {
     @extend %speech_text;
+  }
+}
+
+.speech_off_mid {
+  @include position($n, -100%, 450px);
+  opacity: 0;
+  @include media('med') {
+    opacity: 1;
+  }
+}
+
+.speech_off_right {
+  @include position($n, -100%, 610px);
+  opacity: 0;
+  @include media('lg') {
+    opacity: 1;
   }
 }
 
@@ -126,7 +158,7 @@
 
 #fun_close {
   @extend %lalezar_font;
-  @include position(relative, 0, 75px);
+  @include position(relative, 0, 60px);
   @include fonts(1rem, $text_light);
   cursor: pointer;
   visibility: collapse;

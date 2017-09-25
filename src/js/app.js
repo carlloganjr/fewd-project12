@@ -149,8 +149,14 @@ $('#lights').click(function() {
     });
     if($('.on_off').hasClass('lights_on')) {
       setTimeout(function() {
-        $('.speech_on').css('top', '-175px');
+        $('.speech_on_left').css('top', '-175px');
       }, 2000);
+      setTimeout(function() {
+        $('.speech_on_mid').css('top', '-250px');
+      }, 2500);
+      setTimeout(function() {
+        $('.speech_on_right').css('top', '-225px');
+      }, 3000);
       setTimeout(function() {
         $('.speech_on').css('top', '-100%');
       }, 5200);
@@ -160,8 +166,14 @@ $('#lights').click(function() {
       }, 5700);
     } else {
       setTimeout(function() {
-        $('.speech_off').css('top', '-175px');
+        $('.speech_off_left').css('top', '-175px');
       }, 700);
+      setTimeout(function() {
+        $('.speech_off_mid').css('top', '-250px');
+      }, 1200);
+      setTimeout(function() {
+        $('.speech_off_right').css('top', '-225px');
+      }, 1700);
       setTimeout(function() {
         $('.speech_off').css('top', '-100%');
       }, 3700);
