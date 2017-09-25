@@ -9,8 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-clean-css": "^3.9.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-wait": "0.0.2",
+    "uglify-js2": "^2.1.11"
   },
   "dependencies": {
     "gulp.spritesmith": "^6.5.1"

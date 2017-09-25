@@ -259,3 +259,18 @@ $('.btn_connect').click(function(e) {
     $(get_in_touch).trigger('click');
   }, 900);
 });
+
+const funtrols_div = document.querySelector('.funtrols');
+funtrols_div.addEventListener('mouseover', function(e) {
+  const funtrols = $('.funtrols li');
+  for(i = 0; i < funtrols.length; i++) {
+    if(e.target == funtrols[i]) {
+      let fun_tips = [
+        'Turn the city lights on and off.',
+        'See what\'s lurking above.',
+        'Watch a rocket launch.'
+      ]
+      $('.fun_tips p').text(fun_tips[i]);
+    }
+  }
+});

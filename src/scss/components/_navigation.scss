@@ -9,6 +9,9 @@ nav {
     background: $nav_dark;
     transform: translateX(100%);
     transition: all .5s ease-in-out;
+    @include media('lg') {
+      padding-top: 2rem;
+    }
   }
 }
 

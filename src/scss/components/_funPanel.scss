@@ -76,7 +76,12 @@
   }
 }
 
-
+.fun_tips {
+  @include box(100%, -1.25rem auto, 0, 1rem);
+  p {
+    @include fonts(1rem, $text_light, center, bold);
+  }
+}
 
 .lights_on {
   animation: lights_on 2s linear forwards;
