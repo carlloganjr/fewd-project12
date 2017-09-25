@@ -21,7 +21,15 @@ navigation.addEventListener('click', function(e) {
         navigation.style.zIndex = '-1';
       }, 600);
     }
+    if(scroll_div[0] && window.scrollY <= 10) {
+      $('.carl_logo').css('top', '-100%');
+    }
   }
+});
+
+// contact navigation triggers .title_div event
+$('.contact_nav').click(function(e) {
+  $(get_in_touch).trigger('click');
 });
 
 // show / close menu when 'menu' button is clicked
@@ -31,10 +39,10 @@ menu.addEventListener('click', function(e) {
     ul.style.transform = 'translateX(0)';
     menu_p.innerHTML = 'CLOSE';
     $('.carl_logo').css('top', '7px');
-  } else if(e.target && menu_p.innerHTML == 'CLOSE'){
+  } else if(e.target && menu_p.innerHTML == 'CLOSE') {
     ul.style.transform = 'translateX(100%)';
     menu_p.innerHTML = 'MENU';
-    if($('.slide_up').css('display') === 'none') {
+    if($('.slide_up').css('display') === 'none' || $('.menu_bg').css('height') == '55px') {
       $('.carl_logo').css('top', '7px');
     } else {
       $('.carl_logo').css('top', '-100%');
@@ -60,13 +68,13 @@ $(window).scroll(function() {
       'url(img/form.png)',
       'url(img/gallery.png)'
     ]
-    let y_start = win_ht + folio_offset - (win_ht * .1);
+    let y_start = win_ht + folio_offset - (win_ht * .7);
     let bg_start = win_ht + folio_offset - (win_ht * .4);
     let menu_bg = win_ht - 55;
     if(y_start <= y_scroll) {
-      $(this).next().children().children('svg').css('margin-top', '1.25rem');
+      $(this).children().children('svg').css('margin-top', '1.25rem');
     } else {
-      $(this).next().children().children('svg').css('margin-top', '100%');
+      $(this).children().children('svg').css('margin-top', '100%');
     }
     if(bg_start <= y_scroll) {
       $(this).next().css('background-image', bg_img[i]);
@@ -187,29 +195,29 @@ $('#ufo').click(function() {
     $('.ufo').addClass('ufo_swing');
     setTimeout(function() {
       $('#beam').css('opacity', '1');
-    }, 450);
+    }, 2300);
     setTimeout(function() {
       $('#dude').css({'opacity': '1', 'top': '-15px'});
-    }, 900);
+    }, 2600);
     setTimeout(function() {
       $('#dude').css('opacity', '0');
       $('#beam').css('opacity', '0');
-    }, 1500);
+    }, 3400);
     setTimeout(function() {
       $('.ufo_swoop').removeClass('ufo_swoop_swing');
       $('.ufo').removeClass('ufo_swing');
       $('#dude').css('top', '110px');
-    }, 2100);
+    }, 4000);
     setTimeout(function() {
       $('.ufo_date').css('top', '-175px');
-    }, 2500);
+    }, 4300);
     setTimeout(function() {
       $('.ufo_date').css('top', '-100%');
-    }, 5500);
+    }, 6300);
     setTimeout(function() {
       $("#fun_panel").slideDown();
       $('#fun_close').css('visibility', 'visible');
-    }, 6000);
+    }, 6500);
   });
 });
 
@@ -221,4 +229,21 @@ $('#fun_close').click(function() {
     $('#fun_panel div').addClass('btn_in');
     $('#fun_close').css('visibility', 'collapse');
     $('.on_off').removeClass('lights_on lights_off');
+});
+
+// carl_logo click and scroll to home
+$('.carl_logo').click(function(e) {
+  scroll_div[0].scrollIntoView({behavior: 'smooth', block: 'start'});
+  if(e.target && menu_p.innerHTML == 'CLOSE') {
+    $(menu).trigger('click');
+  }
+});
+
+
+$('.btn_connect').click(function(e) {
+  e.preventDefault();
+  scroll_div[0].scrollIntoView({behavior: 'smooth', block: 'start'});
+  setTimeout(function() {
+    $(get_in_touch).trigger('click');
+  }, 900);
 });

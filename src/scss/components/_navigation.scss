@@ -18,6 +18,19 @@ nav {
   background: $nav_light;
   transform: translateX(125%);
   transition: all .4s ease-out;
+  @include media('sm') {
+    @include box(230px, 0, 0, 65px);
+  }
+  @include media('med') {
+    @include box(340px, 0, 0, 90px);
+  }
+  @include media('lg') {
+    @include box(450px, 0, 0, 120px);
+  }
+}
+
+.contact_nav_bg {
+  @extend .nav_bg;
 }
 
 .nav {
@@ -32,12 +45,33 @@ nav {
     &:hover {
       color: $nav_dark;
     }
+    @include media('sm') {
+      font-size: 3.5rem;
+    }
+    @include media('med') {
+      font-size: 5rem;
+      padding-right: 3rem;
+    }
+    @include media('lg') {
+      font-size: 6.5rem;
+      padding-right: 5rem;
+    }
   }
+}
+
+.contact_nav {
+  @extend .nav;
 }
 
 .nav:hover .nav_bg {
   transform: translateX(1rem);
 }
+
+.contact_nav:hover .contact_nav_bg {
+  transform: translateX(1rem);
+}
+
+
 
 #menu {
   @include position(fixed, .8rem, $r: .8rem, $z: 1002);
@@ -45,6 +79,9 @@ nav {
   @include borders(solid 1px $bdr_light, 1rem);
   color: $text_light;
   cursor: pointer;
+  @include media('med') {
+    right: 2rem;
+  }
   transition: background .4s ease;
   p {
     transform: translateY(-10px);

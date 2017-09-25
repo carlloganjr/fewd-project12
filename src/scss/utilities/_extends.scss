@@ -42,17 +42,37 @@
 %p {
   @include fonts(1rem, $text_light, center);
   @include box(80%, .5rem auto);
+  @include media('med') {
+    font-size: 1.375rem;
+  }
 }
 
 %p_dark {
   @extend %p;
   color: $text_dark;
+  @include media('med') {
+    font-size: 2rem;
+  }
 }
 
 %h2 {
   @extend %lalezar_font;
   @include fonts(3rem, $text_dark, center);
   @include box($n, 0, 30% 0 .5rem 0);
+  @include media('sm') {
+    font-size: 4.5rem;
+    padding-top: 12.5%;
+  }
+  @include media('med') {
+    font-size: 7rem;
+    padding-top: 15%;
+  }
+  @include media('lg') {
+    padding-top: 4%;
+  }
+  @include media('xl') {
+    padding-top: 8%;
+  }
 }
 
 %overlay {

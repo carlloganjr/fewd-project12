@@ -3,6 +3,9 @@
   ul {
     @include flex(column);
     @include box(100%, 0, 0);
+    @include media('med') {
+      @include flex(row, wrap);
+    }
   }
 }
 
@@ -11,6 +14,15 @@
   overflow: hidden;
   background-size: cover;
   position: relative;
+  @include media('sm') {
+    height: 50vw;
+  }
+  @include media('med') {
+    @include box(49.55vw, 0, 0, 49.55vw);
+  }
+  @include media('lg') {
+    @include box(33.1vw, 0, 0, 33.1vw);
+  }
   &:hover .overlay {
     background: rgba(0, 0, 85, .58);
   }
@@ -26,7 +38,7 @@
 .overlay {
   @extend %overlay;
   svg {
-    @include box(20%, 1.25rem 40% 0 40%, 0);
+    @include box(20%, 1.25rem 40% 0 40%, 0, 20%);
     fill: $folio_light;
     stroke: $folio_light;
     transition: all .5s ease-in-out;
@@ -35,6 +47,9 @@
     @extend %lalezar_font;
     @include fonts(2rem, $text_light, center);
     @include box($n, .5rem 0, 0);
+    @include media('med') {
+      font-size: 2.75rem;
+    }
   }
   p {
     @extend %p;
@@ -47,8 +62,12 @@
   }
 }
 
-.soon {
-  svg {
-    padding-top: 18%;
+
+.folio_hdr {
+  @include media('sm') {
+    @include box(100%, 0, 0, 50vw);
+  }
+  @include media('lg') {
+    height: 30vw;
   }
 }

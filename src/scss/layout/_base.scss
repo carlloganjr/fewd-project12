@@ -12,7 +12,8 @@ body {
   position: absolute;
 }
 
-.scroll {
+.scroll,
+.footer {
   @include position(relative, $z: 2);
   @include box(100%, 0, 0);
 }

@@ -30,6 +30,9 @@
 .fun_panel {
   @include box(250px, 4.5rem auto 0 auto, $n, 257px);
   transition: all .5s ease;
+  @include media('med') {
+    margin-top: 10rem;
+  }
 }
 
 .funtrols {
@@ -135,11 +138,11 @@
 }
 
 .blast_off {
-  animation: blast_off .7s 7 cubic-bezier(.36,.07,.19,.97) both;
+  animation: blast_off .6s 7 cubic-bezier(.36,.07,.19,.97) both;
 }
 
 .rocket_blast {
-  animation: rocket_blast 5s cubic-bezier(.07,.59,.94,.29) forwards;
+  animation: rocket_blast 4.5s cubic-bezier(.07,.59,.94,.29) forwards;
 }
 
 .rocket {
@@ -156,13 +159,17 @@
   @include position(absolute, $b: 0, $z: 4);
   transform: translateX(-50%);
   margin-left: 50%;
-  transition: all .4s ease;
+  transition: all 1.4s ease;
 }
 
 .ufo {
   @include box(125px, 0, 0, 125px);
   @include position(absolute, $b: 350px, $l: -145px, $z: 5);
-  transition: all 1s ease;
+  transition: all 2s ease;
+  // @include media('med') {
+  //   bottom: 600px;
+  //   left: -300px;
+  // }
   svg {
     @include box(125px, 0, 0, 125px);
     opacity: 0;
@@ -183,10 +190,19 @@
 
 .ufo_swoop_swing {
   transform: translate(50%, 315px);
+  // @include media('med') {
+  //   transform: translate(50%, 565px);
+  // }
+  // @include media('xl') {
+  //   transform: translate(50%, 565px);
+  // }
 }
 
 .ufo_swing {
   transform: translateX(160px);
+  // @include media('xl') {
+  //   transform: translateX(315px);
+  // }
   svg {
     opacity: 1;
   }

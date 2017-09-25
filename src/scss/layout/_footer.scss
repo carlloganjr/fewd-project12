@@ -1,0 +1,27 @@
+.footer {
+  height: 35vh;
+  background-color: $footer_mid;
+  p {
+    @include fonts(1rem, $text_dark, center);
+    @include box(80%, 0 auto, 2rem 0 0 0);
+    @include media('med') {
+      padding-top: 3.5rem;
+    }
+  }
+}
+
+.btn_connect {
+  @extend %btn;
+  @include box(150px, 1rem auto, 1.5rem);
+  border-color: $bdr_dark;
+  .btn_in {
+    background-color: $footer_dark;
+  }
+  .btn_link {
+    top: .6rem;
+    @include fonts(1.5rem, $text_dark, center);
+    &:hover {
+      color: $text_light
+    }
+  }
+}
